@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <link rel="stylesheet" href="../public/dashboard.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/136511fd8c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/post.css">
+    <style>
+        .container-fluid {
+            align-content: space-between;
+        }
+
+        .searchbtn,
+        .messagebtn,
+        .userbtn {
+            color: white;
+            background-color: #292b2c;
+            display: block;
+            border: none;
+        }
+
+        i {
+            padding: 10%;
+        }
+
+        .postdiv {
+            padding-top: 10%;
+            padding-bottom: 5%;
+            padding-left: 30%;
+            padding-right: 30%;
+        }
+
+        .form-label {
+            text-size-adjust: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand">OurApp</a>
+            <form class="d-flex" method="POST">
+                <button class="userbtn mx-1"><i class="fas fa-user" style="color: white; font-size: 28px;"></i></button>
+                <button class="messagebtn mx-1"><i class="fas fa-comment"
+                        style="color: white; font-size:28px;"></i></button>
+                <button class="searchbtn mx-1"><i class="fas fa-search"
+                        style="color: white; font-size:28px;"></i></button>
+                <!-- <button class="btn btn-primary mx-2" type="submit">New Post</button> -->
+                <form class="d-flex mx-2" action="/signout" method="POST">
+                    <button class="btn btn-outline-light mx-1 my-sm-0" type="submit">Sign Out</button>
+                </form>
+            </form>
+        </div>
+    </nav>
+
+    <div class="postdiv my-5">
+        <h1 class="editTitle">
+            New Post
+        </h1>
+        <form method="POST" action="/dashboard" id="myForm">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Title</label>
+                <input name="title" type="text reset" class="form-control" id="exampleFormControlInput1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Content</label>
+                <textarea name="content" class="form-control" type="reset" id="exampleFormControlTextarea1"
+                    rows="5"></textarea>
+            </div>
+            <div class="mb-3" style="align-content: center;">
+                <button type="submit" class="btn btn-primary">Post</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
