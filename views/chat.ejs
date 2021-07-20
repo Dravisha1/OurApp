@@ -84,7 +84,7 @@
   
     socket.on('chat message', function(msg) {
       var item = document.createElement('li');
-      item.textContent = `${user.name} + ${msg}`;
+      item.textContent = msg;
       console.log(item.textContent);
       messages.appendChild(item);
       window.scrollTo(0, document.body.scrollHeight);
